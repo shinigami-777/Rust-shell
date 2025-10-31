@@ -6,6 +6,8 @@ use std::os::unix::fs::PermissionsExt;
 use std::path::{Path, PathBuf};
 use std::process::Command;
 
+mod navigation;
+
 // takes filename input and checks if a file with that name present in PATH
 // returns array of all such files
 fn check_if_file_present(file: &str)-> Vec<PathBuf> {
@@ -33,7 +35,7 @@ fn check_if_file_present(file: &str)-> Vec<PathBuf> {
 
 fn main() {
 
-    let builtin_commands = ["exit", "echo", "type"];
+    let builtin_commands = ["exit", "echo", "type", "pwd"];
     loop {
         print!("$ ");
         io::stdout().flush().unwrap();
@@ -53,6 +55,12 @@ fn main() {
         // echo command
         else if input[0]=="echo" {
             println!("{}", &user_input[5..]);
+        }
+        // pwd command
+        else if input[0]=="pwd" {
+            if let Err(e) = navigation::pwd() {
+            eprintln!("Error: {}", e);
+        }
         }
         // type command
         else if input[0]=="type" {
