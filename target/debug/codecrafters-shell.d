@@ -1,0 +1,1 @@
+/home/sh1n1g4m1/stuff/dev/learning/rust/Rust-shell/target/debug/codecrafters-shell: /home/sh1n1g4m1/stuff/dev/learning/rust/Rust-shell/src/main.rs /home/sh1n1g4m1/stuff/dev/learning/rust/Rust-shell/src/navigation/cd.rs /home/sh1n1g4m1/stuff/dev/learning/rust/Rust-shell/src/navigation/mod.rs /home/sh1n1g4m1/stuff/dev/learning/rust/Rust-shell/src/navigation/pwd.rs

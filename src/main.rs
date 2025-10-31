@@ -60,7 +60,11 @@ fn main() {
         else if input[0]=="pwd" {
             if let Err(e) = navigation::pwd() {
             eprintln!("Error: {}", e);
+            }
         }
+        // cd command
+        else if input[0]=="cd" {
+            navigation::cd(input[1].to_string());
         }
         // type command
         else if input[0]=="type" {
